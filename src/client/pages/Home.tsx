@@ -124,8 +124,8 @@ const homeCopy: Record<
   }
 > = {
   en: {
-    title: "ZestSend — Private P2P file transfer",
-    heading: "ZestSend — Private P2P file transfer",
+    title: "QuantianSend — Private P2P file transfer",
+    heading: "QuantianSend — Private P2P file transfer",
     language: "en",
     prefix: "Anonymously",
     codeInputLabel: "Connection code digit",
@@ -133,16 +133,16 @@ const homeCopy: Record<
     footerLinks: ["Language", "Settings", "About"],
     languageDialog: {
       close: "Close language picker",
-      description: "Choose the language used on the ZestSend home page.",
+      description: "Choose the language used on the QuantianSend home page.",
       title: "Language",
     },
     settingsDialog: {
       close: "Close settings",
-      description: "Choose the colors used throughout ZestSend.",
+      description: "Choose the colors used throughout QuantianSend.",
       title: "Appearance",
     },
     aboutDialog: {
-      close: "Close about ZestSend",
+      close: "Close about QuantianSend",
       description: "An open-source P2P connection tool for secure, private data transfer.",
       diagnostics: {
         checking: "Measuring available ICE servers...",
@@ -162,8 +162,8 @@ const homeCopy: Record<
         turn: "TURN",
         unavailable: "Unavailable",
       },
-      intro: "ZestSend is a WebRTC-powered peer-to-peer (P2P) data transfer website that lets you send data securely and privately, without server relays or storage.",
-      title: "About ZestSend",
+      intro: "QuantianSend is a WebRTC-powered peer-to-peer (P2P) data transfer website that lets you send data securely and privately, without server relays or storage.",
+      title: "About QuantianSend",
     },
     activities: [
       { word: "chat in real time", icon: "chat" },
@@ -179,8 +179,8 @@ const homeCopy: Record<
     ],
   },
   zh: {
-    title: "ZestSend — 私密 P2P 文件传输",
-    heading: "ZestSend — 私密 P2P 文件传输",
+    title: "泉天快传 — 私密 P2P 文件传输",
+    heading: "泉天快传 — 私密 P2P 文件传输",
     language: "zh-CN",
     prefix: "匿名",
     codeInputLabel: "连接数字第",
@@ -188,16 +188,16 @@ const homeCopy: Record<
     footerLinks: ["语言", "设置", "关于"],
     languageDialog: {
       close: "关闭语言选择",
-      description: "选择 ZestSend 首页使用的语言。",
+      description: "选择 泉天快传 首页使用的语言。",
       title: "语言",
     },
     settingsDialog: {
       close: "关闭设置",
-      description: "选择 ZestSend 使用的背景和强调色。",
+      description: "选择 泉天快传 使用的背景和强调色。",
       title: "外观",
     },
     aboutDialog: {
-      close: "关闭关于 ZestSend",
+      close: "关闭关于 泉天快传",
       description: "开源的 P2P 连接工具，提供安全、私密的 P2P 数据传输。",
       diagnostics: {
         checking: "正在测速可用的 ICE 服务器...",
@@ -217,8 +217,8 @@ const homeCopy: Record<
         turn: "TURN",
         unavailable: "不可用",
       },
-      intro: "ZestSend 是一个基于 WebRTC 的点对点（P2P）数据传输网站，支持安全、私密地传输数据，无需通过服务器中转或存储。",
-      title: "关于 ZestSend",
+      intro: "泉天快传 是一个基于 WebRTC 的点对点（P2P）数据传输网站，支持安全、私密地传输数据，无需通过服务器中转或存储。",
+      title: "关于 泉天快传",
     },
     activities: [
       { word: "畅聊", icon: "chat" },
@@ -506,15 +506,15 @@ function ProjectAttribution() {
   return (
     <p className="mt-7 inline-flex items-center gap-1.5 text-center text-[clamp(0.7rem,1.6vw,0.95rem)] font-semibold tracking-[0.08em] text-sky-100/75 sm:mt-9">
       <a
-        aria-label="GitHub: RavelloH/ZestSend"
+        aria-label="QuantianSend"
         className="inline-flex items-center hover:text-sky-100"
-        href="https://github.com/ravelloh/zestsend"
+        href="https://www.quantianjs.cn/"
         rel="noreferrer"
         target="_blank"
       >
         <RiGithubFill aria-hidden="true" className="size-[1.15em]" />
         <LetterCascade
-          text="RavelloH/ZestSend"
+          text="泉天快传"
           className="ml-1.5 text-inherit"
           staggerFrom="center"
         />
@@ -522,12 +522,12 @@ function ProjectAttribution() {
       <span>. Made by </span>
       <a
         className="hover:text-sky-100"
-        href="https://ravelloh.com"
+        href="https://www.quantianjs.cn/"
         rel="noreferrer"
         target="_blank"
       >
         <LetterCascade
-          text="RavelloH"
+          text="泉天净水"
           className="text-inherit"
           staggerFrom="center"
         />
@@ -738,12 +738,12 @@ function AboutDialog({
           <div className="flex w-full items-center gap-4">
             <a
               className="inline-flex w-fit items-center gap-2 font-semibold text-sky-100 transition-colors hover:text-white"
-              href="https://github.com/ravelloh/zestsend"
+              href="https://www.quantianjs.cn/"
               rel="noreferrer"
               target="_blank"
             >
               <RiGithubFill aria-hidden="true" className="size-5" />
-              RavelloH/ZestSend
+              泉天快传
             </a>
             <button
               aria-label={copy.diagnostics.title}
@@ -757,9 +757,9 @@ function AboutDialog({
           </div>
           <div className="border-t border-white/10 pt-10 sm:pt-12">
             <a
-              aria-label="Visit RavelloH"
+              aria-label="Visit QuantianJS"
               className="group flex justify-center py-1 text-sky-100/80 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-sky-100/60"
-              href="https://ravelloh.com"
+              href="https://www.quantianjs.cn/"
               rel="noreferrer"
               target="_blank"
             >
@@ -769,7 +769,7 @@ function AboutDialog({
                 duration={3}
                 fontSize={24}
                 fontUrl="/LastoriaBoldRegular.otf"
-                text="RavelloH"
+                text="QuantianJS"
               />
             </a>
           </div>
@@ -898,7 +898,7 @@ export default function Home({ locale = "en" }: { locale?: HomeLocale }) {
 
   useEffect(() => {
     document.documentElement.lang = copy.language;
-    window.localStorage.setItem("zestsend_locale", locale);
+    window.localStorage.setItem("quantiansend_locale", locale);
   }, [copy.language, locale]);
 
   useEffect(() => {
@@ -931,7 +931,7 @@ export default function Home({ locale = "en" }: { locale?: HomeLocale }) {
         <h1 id="home-title" className="sr-only">{copy.heading}</h1>
         <div className="absolute inset-x-0 top-[calc(50%_-_26rem)] h-[400px] sm:top-[calc(50%_-_27rem)]" aria-hidden="true">
           <CursorDrivenParticleTypography
-            text="ZestSend"
+            text="泉天快传"
             particleDensity={2}
             particleSize={1}
             fontSize={180}

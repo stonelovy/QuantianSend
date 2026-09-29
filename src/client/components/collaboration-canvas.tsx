@@ -108,7 +108,7 @@ export function CollaborationCanvas({ accent, locale, onFeatureUsed, provider }:
   const initialCameraSetRef = useRef(false);
   const surfaceRef = useRef<SVGSVGElement>(null);
 
-  const strokes = useMemo(() => provider?.document.getArray<Y.Map<unknown>>("zestsend-canvas-strokes") ?? null, [provider]);
+  const strokes = useMemo(() => provider?.document.getArray<Y.Map<unknown>>("quantiansend-canvas-strokes") ?? null, [provider]);
   const renderedStrokes = useMemo(() => strokes ? readStrokes(strokes) : [], [strokes, version]);
 
   useEffect(() => {

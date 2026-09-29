@@ -26,7 +26,7 @@ function decodeFrame(frame: ArrayBuffer): { payload: Uint8Array; type: Collabora
 }
 
 /**
- * A minimal Yjs provider that keeps collaboration traffic on ZestSend's
+ * A minimal Yjs provider that keeps collaboration traffic on QuantianSend's
  * dedicated WebRTC data channel. It intentionally has no server persistence.
  */
 export class P2PCollaborationProvider {

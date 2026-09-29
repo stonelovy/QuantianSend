@@ -1,6 +1,6 @@
 {
-  "name": "ZestSend",
-  "short_name": "ZestSend",
+  "name": "QuantianSend",
+  "short_name": "QuantianSend",
   "description": "安全、私密的 P2P 连接与数据传输",
   "start_url": "/",
   "display": "standalone",

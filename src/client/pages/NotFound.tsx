@@ -3,7 +3,7 @@ import { CursorDrivenParticleTypography } from "../components/ui/cursor-driven-p
 
 export default function NotFound() {
   return (
-    <Layout title="ZestSend — 404">
+    <Layout title="QuantianSend — 404">
       <main
         aria-label="Page not found. Click anywhere to return home."
         className="flex h-full min-h-0 cursor-pointer flex-col items-center justify-center gap-1 overflow-hidden px-4 sm:gap-5"
@@ -11,7 +11,7 @@ export default function NotFound() {
         role="button"
         tabIndex={0}
       >
-        <h1 className="sr-only">ZestSend 404</h1>
+        <h1 className="sr-only">QuantianSend 404</h1>
         <CursorDrivenParticleTypography
           aria-hidden="true"
           className="h-[min(30vw,15rem)] min-h-0 max-w-5xl"
@@ -20,7 +20,7 @@ export default function NotFound() {
           fontSize={180}
           particleDensity={2}
           particleSize={1}
-          text="ZestSend"
+          text="泉天快传"
         />
         <CursorDrivenParticleTypography
           aria-hidden="true"

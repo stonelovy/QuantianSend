@@ -122,7 +122,7 @@ export const appThemes: readonly AppTheme[] = [
   },
 ] as const;
 
-const storageKey = "zestsend-theme";
+const storageKey = "quantiansend-theme";
 
 type ThemeContextValue = {
   setThemeId: (id: ThemeId) => void;

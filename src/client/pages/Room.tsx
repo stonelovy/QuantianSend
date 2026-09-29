@@ -210,7 +210,7 @@ const roomCopy = {
     roomFullTitle: "Room is full",
     returnHome: "Return home",
     pageTitle: (roomId: string) => `Connecting to room ${roomId}`,
-    roomTitle: (roomId: string) => `ZestSend room ${roomId}`,
+    roomTitle: (roomId: string) => `QuantianSend room ${roomId}`,
   },
   zh: {
     connectingTitle: "正在建立端对端连接",
@@ -234,7 +234,7 @@ const roomCopy = {
     roomFullTitle: "房间已满",
     returnHome: "返回首页",
     pageTitle: (roomId: string) => `正在连接房间 ${roomId}`,
-    roomTitle: (roomId: string) => `ZestSend 房间 ${roomId}`,
+    roomTitle: (roomId: string) => `泉天快传 房间 ${roomId}`,
   },
 } as const;
 
@@ -524,7 +524,7 @@ function ConnectionDialog({
     const url = new URL(`/room/${roomId}`, window.location.origin).toString();
     try {
       if (navigator.share) {
-        await navigator.share({ title: `ZestSend ${copy.room} ${roomId}`, url });
+        await navigator.share({ title: `QuantianSend ${copy.room} ${roomId}`, url });
         return;
       }
       await navigator.clipboard.writeText(url);
@@ -2546,11 +2546,11 @@ function RoomWorkspace({
                 transition={{ duration: 0.5 }}
               >
                 <a
-                  href="https://github.com/RavelloH/ZestSend"
+                  href="https://www.quantianjs.cn"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
-                  ZestSend
+                  QuantianSend
                 </a>
               </motion.h1>
               <p className="truncate text-sm font-bold tracking-[0.06em] text-sky-100/65 sm:text-xl"># {roomId}</p>
@@ -2883,7 +2883,7 @@ export default function Room({ locale, roomId }: { locale: RoomLocale; roomId: s
       setCanvasHasContent(false);
       return;
     }
-    const strokes = collaborationProvider.document.getArray<Y.Map<unknown>>("zestsend-canvas-strokes");
+    const strokes = collaborationProvider.document.getArray<Y.Map<unknown>>("quantiansend-canvas-strokes");
     const refreshCanvasContent = () => {
       const hasContent = strokes.toArray().some((stroke) => (
         !stroke.get("deleted") && ((stroke.get("points") as Y.Array<number> | undefined)?.length ?? 0) > 0

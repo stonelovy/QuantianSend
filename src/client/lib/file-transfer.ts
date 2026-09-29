@@ -9,7 +9,7 @@ const FILE_DIRECT_MAX_IN_FLIGHT_BLOCKS = 4;
 const FILE_RELAY_MAX_IN_FLIGHT_BLOCKS = 2;
 const FILE_HEADER_SIZE = 32;
 const FILE_MAGIC = 0x5a534631;
-const FILE_TEMP_PREFIX = "zestsend-";
+const FILE_TEMP_PREFIX = "quantiansend-";
 const FILE_TEMP_SUFFIX = ".part";
 
 export type FileTransferState = "offered" | "waiting" | "transferring" | "complete" | "cancelled" | "error";
@@ -827,7 +827,7 @@ export class FileTransferManager {
       this.emit(record);
     }).catch((error) => {
       if (isAbortError(error) || !this.isCurrentRecord(record)) return;
-      console.error("ZestSend could not write a received file block", error);
+      console.error("QuantianSend could not write a received file block", error);
       this.fail(record, this.storageErrorMessage(error));
     });
   }
@@ -852,9 +852,9 @@ export class FileTransferManager {
     if (typeof navigator.storage?.persist !== "function") return;
     try {
       const persisted = await navigator.storage.persist();
-      if (!persisted) console.warn("ZestSend persistent storage request was not granted.");
+      if (!persisted) console.warn("QuantianSend persistent storage request was not granted.");
     } catch (error) {
-      console.warn("ZestSend could not request persistent storage", error);
+      console.warn("QuantianSend could not request persistent storage", error);
     }
   }
 
@@ -956,7 +956,7 @@ export class FileTransferManager {
         }
       }
     } catch (error) {
-      console.warn("ZestSend could not clean temporary file storage", error);
+      console.warn("QuantianSend could not clean temporary file storage", error);
     }
   }
 
@@ -977,7 +977,7 @@ export class FileTransferManager {
       });
       discarded = true;
     } catch (error) {
-      if (!isAbortError(error)) console.warn("ZestSend could not remove a temporary file", error);
+      if (!isAbortError(error)) console.warn("QuantianSend could not remove a temporary file", error);
     } finally {
       if (!discarded) await this.deleteTemporaryFileName(targetName);
       record.target = undefined;
@@ -1007,7 +1007,7 @@ export class FileTransferManager {
         lastError = error;
       }
     }
-    console.warn("ZestSend could not remove a temporary file", lastError);
+    console.warn("QuantianSend could not remove a temporary file", lastError);
   }
 
   private updateRate(record: FileRecord): void {
@@ -1072,7 +1072,7 @@ export class FileTransferManager {
     record.state = "error";
     record.error = error;
     void this.removeTemporaryFile(record);
-    console.error("ZestSend file transfer failed", { error, id: record.id, name: record.name });
+    console.error("QuantianSend file transfer failed", { error, id: record.id, name: record.name });
     this.callbacks.onError(record.id, error);
     this.emit(record);
   }

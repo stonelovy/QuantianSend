@@ -11,7 +11,7 @@ const app = new Hono<ApiContext>();
 
 const SUPPORTED_LOCALES = ["en", "zh"] as const;
 const DEFAULT_LOCALE = "en";
-const LOCALE_COOKIE = "zestsend_locale";
+const LOCALE_COOKIE = "quantiansend_locale";
 const LOCALE_COOKIE_MAX_AGE = 60 * 60 * 24 * 365;
 
 type Locale = (typeof SUPPORTED_LOCALES)[number];

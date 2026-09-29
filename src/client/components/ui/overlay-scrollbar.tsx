@@ -9,7 +9,7 @@ export const VERTICAL_SCROLLBAR_OPTIONS = {
     y: "scroll",
   },
   scrollbars: {
-    theme: "os-theme-zestsend",
+    theme: "os-theme-quantiansend",
     autoHide: "move",
     autoHideDelay: 420,
     autoHideSuspend: false,

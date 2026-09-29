@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const storedLocaleKey = "zestsend_locale";
+const storedLocaleKey = "quantiansend_locale";
 
 function preferredLocale(): "en" | "zh" {
   const stored = window.localStorage.getItem(storedLocaleKey);

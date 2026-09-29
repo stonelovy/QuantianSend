@@ -1,6 +1,6 @@
 import { useEffect, type ReactNode } from "react";
 
-export default function Layout({ children, title = "ZestSend - P2P文件传输" }: { children: ReactNode; title?: string }) {
+export default function Layout({ children, title = "泉天快传 - P2P文件传输" }: { children: ReactNode; title?: string }) {
   useEffect(() => {
     document.title = title;
     if (import.meta.env.DEV) return;

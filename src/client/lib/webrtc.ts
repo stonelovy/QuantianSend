@@ -64,7 +64,7 @@ export type SessionStatus = {
 
 type DataChannelPingMessage = {
   id: string;
-  type: "zestsend-ping" | "zestsend-pong";
+  type: "quantiansend-ping" | "quantiansend-pong";
 };
 
 type ChatReceiptStatus = "received" | "read";
@@ -514,7 +514,7 @@ const V2_MAX_HEARTBEAT_MISSES = 3;
 type V2HelloMode = "new" | "resume-signaling" | "restart-peer";
 
 function v2ResumeKey(roomId: string): string {
-  return `zestsend:room:${encodeURIComponent(roomId)}:resume`;
+  return `quantiansend:room:${encodeURIComponent(roomId)}:resume`;
 }
 
 function v2ReadResumeToken(roomId: string): string | null {
@@ -1303,9 +1303,9 @@ export class NativeWebRTCSession {
       return;
     }
     if (message.type === "chat-typing") { this.onChatTyping(); return; }
-    if (message.type === "zestsend-ping") { this.sendDataChannelControl({ id: message.id, type: "zestsend-pong" }); return; }
+    if (message.type === "quantiansend-ping") { this.sendDataChannelControl({ id: message.id, type: "quantiansend-pong" }); return; }
     const startedAt = this.dataChannelPingStartedAt;
-    if (message.type !== "zestsend-pong" || startedAt === null || message.id !== String(startedAt)) return;
+    if (message.type !== "quantiansend-pong" || startedAt === null || message.id !== String(startedAt)) return;
     this.dataChannelPingStartedAt = null;
     if (this.dataChannelPingTimeout !== undefined) { window.clearTimeout(this.dataChannelPingTimeout); this.dataChannelPingTimeout = undefined; }
     this.setStep("p2p", { state: "active", detail: "P2P connection established", latency: Math.round(performance.now() - startedAt) });
@@ -1334,7 +1334,7 @@ export class NativeWebRTCSession {
   private measureDataChannelLatency(): void {
     if (this.closed || this.dataChannelPingStartedAt !== null || this.channels.control?.readyState !== "open") return;
     const startedAt = performance.now(); this.dataChannelPingStartedAt = startedAt;
-    this.sendDataChannelControl({ id: String(startedAt), type: "zestsend-ping" });
+    this.sendDataChannelControl({ id: String(startedAt), type: "quantiansend-ping" });
     this.dataChannelPingTimeout = window.setTimeout(() => { this.dataChannelPingStartedAt = null; this.dataChannelPingTimeout = undefined; }, 5_000);
   }
   private sendDataChannelControl(message: DataChannelControlMessage): void { this.sendOnChannel("control", JSON.stringify(message)); }

@@ -1,4 +1,4 @@
-# Contributing to ZestSend
+# Contributing to QuantianSend
 
 Thanks for contributing.
 
