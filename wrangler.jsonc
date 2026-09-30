@@ -9,7 +9,7 @@
     "directory": "./dist/client",
     "binding": "ASSETS",
     "not_found_handling": "single-page-application",
-    "run_worker_first": ["/api/*", "/", "/en", "/zh", "/room/*", "/en/room/*", "/zh/room/*", "/dac5428c6a804238f4820ed25d9d28a1.txt"]
+    "run_worker_first": ["/api/*", "/", "/en", "/zh", "/room/*", "/en/room/*", "/zh/room/*", "/24b19e7bc40f333a260e405adce7cb64.txt"]
   },
   "durable_objects": {
     "bindings": [

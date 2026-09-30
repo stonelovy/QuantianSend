@@ -10,8 +10,8 @@ type ApiContext = { Bindings: ApiBindings };
 const app = new Hono<ApiContext>();
 
 // 微信域名验证文件 - 用于微信内打不开的申诉
-app.get("/dac5428c6a804238f4820ed25d9d28a1.txt", (context) => {
-  return new Response("1c37518da66b5e9ace77166a990fe38776a0171b", {
+app.get("/24b19e7bc40f333a260e405adce7cb64.txt", (context) => {
+  return new Response("2dde07ea225629652e172c49f675e42c52ad2d1c", {
     headers: { "Content-Type": "text/plain; charset=utf-8" },
   });
 });
