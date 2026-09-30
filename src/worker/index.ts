@@ -9,6 +9,13 @@ type ApiContext = { Bindings: ApiBindings };
 
 const app = new Hono<ApiContext>();
 
+// 微信域名验证文件 - 用于微信内打不开的申诉
+app.get("/24b19e7bc40f333a260e405adce7cb64.txt", (context) => {
+  return new Response("2dde07ea225629652e172c49f675e42c52ad2d1c", {
+    headers: { "Content-Type": "text/plain; charset=utf-8" },
+  });
+});
+
 const SUPPORTED_LOCALES = ["en", "zh"] as const;
 const DEFAULT_LOCALE = "en";
 const LOCALE_COOKIE = "quantiansend_locale";
